@@ -3,82 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
-       body{
-            background-color: #e5dfd4;
+        body{
+            font-family:Poppins;
+            background-color:#fcf5e5;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+            margin:0px;
         }
-        .loginmain{
-            
-            background-color: #fcc867ff;
-            border-radius:30px;
-            width: 100%;
-            max-width: 570px;
-            margin: 40px auto;
-            padding:30px;    
+
+        .login-container{
+            background:#fff;
+            border-radius:10px;
+            box-shadow: 0 4px 15px rgb(0,0,0,0.1);
+            display:flex;
+            overflow:hidden;
+            width:800px;
+            max-width:90%;
         }
-    .loginform{
-        display:flex;
-    }
-.loginimage{
-    display:flex;
-}
-.loginheader{
-    text-align:center;
-    color:white;
-    font-size:25px;
-    margin:5px;
-}
-      .loginimage form label {
-            font-size: 18px;
-            text-align: left;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
+
+        .image{
+            background-color: #ffe77aff;
+            padding:20px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:40%;
         }
-   .loginimage form input[type="email"],
-        .loginimage form input[type="password"] {
-            padding: 7px;
-            margin-bottom: 18px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 15px;
+        .image img{
+            max-width:100%;
+            height:auto;
         }
-        
-              .loginimage form{
-                padding-top:25px;
-                padding-left:18px;
-              }
-                      .loginimage form input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 8px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+
+        .form-section{
+            padding:40px;
+            color: #313435db;
+        }
+
+        .form-section label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        .form-section input{
+            width:100%;
+            padding:10px;
+            margin-bottom:15px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:1rem;
+            box-sizing: border-box;
+        }
+
+        .form-section button{
+            width:100%;
+            padding:12px;
+            background-color: #ff7c2bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:1.1rem;
+            cursor:pointer;
+            box-sizing: border-box;
+        }
+        .form-section .links{
+            margin-top:10px;
+            text-align:left;
+        }
+        .form-section .links a {
+            color:#cc3300;
+            text-decoration:none;
+        }
+
+        @media (max-width: 600px){
+            .login-container{
+                flex-direction:column;
+            }
+            .image, .form-section{
+                width:100%;
+        }
+        .form-section{
+            padding:20px;
         }
     </style>
-
 </head>
 <body>
-    <?php
-        include "nav.php";
-    ?>
 
-    <div class="loginmain">
-        <h3 class="loginheader">Login to Your Account</h3>
-        <div class="loginimage">
-            <img src="p.png" width="280px">
+
+    <div class="login-container">
+        <div class="image">
+            <img src="loginimage.png">
+        </div>
+        <div class="form-section">
+            <h2>Log In Page</h2>
             <form>
-                <label>Username</label><br>
-                <input type="email"><br>
-                <label>Password</label><br>
-                <input type="email"><br>
-                <label style="font-size:10px;">Don't have an account? <a href="#">Sign up now</a></label>
-                <input type="submit" value="LogIn">
-            </form>
+                <label>Email</label>
+                <input type="email" id="email" required>
+
+                <label>Password</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Log In</button>
+             </form>
+             <div class="links">
+             <a href="">create a new account</a>
+            </div>
         </div>
     </div>
 </body>
